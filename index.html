@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="util.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <style>
+        body{
+            background-color: wheat;
+        }
+    </style>
+    <body>
+        <h1 class=" text-center"> Welcome to Calculate me!</h1>
+        <table class="calculator" id="p1">
+            <tr>
+                <td colspan="3"><input class="display-box" type="text" id="result" disabled/></td>
+                <td> <input type="button" value="C" onclick="ClearScreen()" id="btn"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="display('1')" class="b1"/></td>
+                <td><input type="button" value="2" onclick="display('2')" class="b1"/></td>
+                <td><input type="button" value="3" onclick="display('3')" class="b1"/></td>
+                <td><input type="button" value="/" onclick="display('/')" class="b1"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="display('4')" class="b1"/></td>
+                <td><input type="button" value="5" onclick="display('5')" class="b1"/></td>
+                <td><input type="button" value="6" onclick="display('6')" class="b1"/></td>
+                <td><input type="button" value="-" onclick="display('-')" class="b1"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="display('7')" class="b1"/></td>
+                <td><input type="button" value="8" onclick="display('8')" class="b1"/></td>
+                <td><input type="button" value="9" onclick="display('9')" class="b1"/></td> 
+                <td><input type="button" value="+" onclick="display('+')" class="b1"/></td>            
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="display('.')" class="b1"/></td>
+                <td><input type="button" value="0" onclick="display('0')" class="b1"/></td>
+                <td><input type="button" value="=" onclick="calculate()" class="b1" id="btn"/></td>
+                <td><input type="button" value="*" onclick="display('*')" class="b1"/></td>
+            </tr>
+        </table>
+        <script>
+            function ClearScreen(){
+                document.getElementById("result").value="";
+            }
+            function display(value){
+                document.getElementById("result").value += value;
+            }
+            function calculate(){
+                var s=document.getElementById("result").value;
+                var u=eval(s);
+                document.getElementById("result").value=u
+            }
+
+        </script>
+    </body>
+</html>
